@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { Product } from '../../../core/domain/models/products.model';
 import { RegularExpressions } from '../../../shared/regex';
 import { MatSelectModule } from '@angular/material/select';
+import { productUseCaseModule } from '../../../core/usecases/productModule.usecase';
 @Component({
   selector: 'app-add-product',
   imports: [
@@ -29,7 +30,6 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './add-product.component.scss',
 })
 export class AddProductComponent {
- 
   expressionsR = RegularExpressions;
   catgories = [
     { value: 'maquillaje', viewValue: 'Maquillaje' },
@@ -67,7 +67,10 @@ export class AddProductComponent {
       Validators.required,
     ]),
   });
-  constructor(public dialogRef: MatDialogRef<AddProductComponent>) {}
+  constructor(
+    public dialogRef: MatDialogRef<AddProductComponent>,
+    private use: productUseCaseModule
+  ) {}
 
   get f() {
     return this.form.controls;
@@ -90,6 +93,8 @@ export class AddProductComponent {
         description: description!,
         price: price!,
       };
+
+      this.use.addProduct(body);
     }
   }
 }

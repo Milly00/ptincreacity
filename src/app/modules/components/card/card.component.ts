@@ -21,7 +21,7 @@ export class CardComponent {
     this.edit.emit(product);
   }
 
-  deleteProduct(id: string) {
+  deleteProduct(id?: string) {
     console.log(id);
     this.delete.emit(id);
   }

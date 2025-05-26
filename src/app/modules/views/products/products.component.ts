@@ -14,37 +14,16 @@ import { ProductsService } from '../../../insfrastucture/services/products.servi
   styleUrl: './products.component.scss',
 })
 export class ProductsComponent implements OnInit {
-  products: Product[] = [  
-    {
-      name: 'Crema Hidratante',
-      price: 32000,
-      description: 'Crema ligera para piel mixta con aloe vera.',
-      category: 'Maquillaje',
-      code: 'CH-002',
-    },
-    {
-      name: 'Crema Hidratante',
-      price: 32000,
-      description: 'Crema ligera para piel mixta con aloe vera.',
-      category: 'Maquillaje',
-      code: 'CH-002',
-    },
-    {
-      name: 'Crema Hidratante',
-      price: 32000,
-      description: 'Crema ligera para piel mixta con aloe vera.',
-      category: 'Maquillaje',
-      code: 'CH-002',
-    },
-  ];
+  products: Product[] = [];
 
-  constructor(
-    private dialog: MatDialog
-  ) {}
+  constructor(private dialog: MatDialog, private use: productUseCaseModule) {}
 
   ngOnInit() {
     // ...
-   
+
+    this.use.getAllProducts().subscribe((res) => {
+      this.products = res;
+    });
   }
 
   openDialog(product: Product) {
@@ -58,6 +37,7 @@ export class ProductsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== undefined) {
         console.log(result);
+        this.use.editProduct(result._id, result);
       }
     });
   }
@@ -89,6 +69,7 @@ export class ProductsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== undefined) {
         console.log(result);
+        this.use.deleteProduct(id);
       }
     });
   }
