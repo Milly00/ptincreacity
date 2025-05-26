@@ -1,0 +1,55 @@
+@use "../../../shared/styles/variables";
+
+.btn {
+  width: 150px;
+}
+.btn-primary {
+  background-color: variables.$secondary;
+  border-color: variables.$secondary;
+  border-radius: 10px;
+  padding: 10px;
+  color: variables.$white;
+  font-weight: bold;
+  span {
+    font-size: 16px;
+  }
+}
+
+.btn-icon-primary {
+  background-color: variables.$secondary-light;
+  border-color: transparent;
+  color: variables.$secondary;
+}
+.btn-icon-primary:hover {
+  color: variables.$white;
+  border-color: transparent;
+  background-color: variables.$secondary;
+}
+
+.btn-icon-delete {
+  border-color: transparent;
+  color: red;
+  background-color: white;
+}
+
+.btn-icon-delete:hover {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  color: variables.$title-secondary;
+  background-color: white;
+  border-color: variables.$secondary;
+  transition-duration: 10ms;
+}
+
+.btn-icon {
+  border-radius: 10px;
+  padding: 10px;
+  justify-items: center;
+  justify-content: center;
+  display: inline-flex;
+  span {
+    font-size: 16px;
+  }
+}

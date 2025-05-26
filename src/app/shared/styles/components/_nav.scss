@@ -1,0 +1,69 @@
+@use "../../../shared/styles/variables";
+
+.nav-container {
+  display: grid;
+  grid-template-columns: 0.7fr 2fr;
+  grid-template-rows: 1fr;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: start;
+  padding: 15px 40px;
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: variables.$title-secondary;
+    font-weight: bolder;
+  }
+
+  background-color: variables.$white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.nav-options-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: variables.$title-primary;
+  }
+
+  a:hover {
+    color: variables.$secondary;
+  }
+}
+
+.nav-btn-collapse {
+  width: fit-content;
+  background-color: transparent;
+  border-color: transparent;
+  display: none;
+}
+.d-none {
+  display: none !important;
+}
+
+@media (min-width: 610px) {
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .nav-options-content {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .nav-btn-collapse {
+    display: flex;
+    width: 100%;
+  }
+}

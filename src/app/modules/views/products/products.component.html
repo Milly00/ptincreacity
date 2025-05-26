@@ -1,0 +1,13 @@
+<div class="product-container">
+    <div *ngFor="let product of products">
+        <app-card (edit)="getProduct($event)" [product]="product"></app-card>
+    </div>
+
+</div>
+<div class="product-options">
+    <button class="btn-icon-primary btn-icon">Agregar Producto
+        <span class="material-symbols-outlined">
+            add
+        </span>
+    </button>
+</div>
