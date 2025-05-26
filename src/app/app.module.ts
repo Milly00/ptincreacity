@@ -8,6 +8,7 @@ import { ProductsComponent } from './modules/views/products/products.component';
 import { CardComponent } from './modules/components/card/card.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, ProductsComponent],
   imports: [
@@ -18,7 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [provideHttpClient() ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

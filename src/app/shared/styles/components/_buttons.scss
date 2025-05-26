@@ -26,6 +26,12 @@
   background-color: variables.$secondary;
 }
 
+.btn-icon-primary:disabled {
+  color: variables.$white;
+  border-color: transparent;
+  background-color: rgba(128, 128, 128, 0.514);
+}
+
 .btn-icon-delete {
   border-color: transparent;
   color: red;

@@ -12,11 +12,17 @@ import { CommonModule } from '@angular/common';
 export class CardComponent {
   @Input({ required: true }) product!: Product;
   @Output() edit = new EventEmitter<Product>();
+  @Output() delete = new EventEmitter<string>();
 
   img: string = '../../../shared/images/product.png';
 
   sendProduct(product: Product) {
     console.log(product);
     this.edit.emit(product);
+  }
+
+  deleteProduct(id: string) {
+    console.log(id);
+    this.delete.emit(id);
   }
 }

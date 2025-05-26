@@ -1,0 +1,125 @@
+<h4 mat-dialog-title class="text-center">Editar {{form.controls.name.value}}</h4>
+<mat-dialog-content>
+    <form class="edit-product-content" [formGroup]="form">
+
+        <mat-form-field class="product-input">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" minlength="3" maxlength="50" required placeholder="Nombre" id="name" />
+            <mat-hint *ngIf="f['name']?.invalid && f['name']?.touched" >
+                <mat-error class="text-error" *ngIf="
+                  f['name'].errors &&
+                  f['name'].errors['required']
+                ">
+                    Este campo es obligatorio.
+                </mat-error>
+                <mat-error class="text-error" *ngIf="
+                  f['name'].errors &&
+                  f['name'].errors['minlength']
+                ">
+                    Debe tener mínimo 3 caracteres.
+                </mat-error>
+                <mat-error class="text-error" *ngIf="
+                  f['name'].errors &&
+                  f['name'].errors['pattern']
+                ">
+                    Solo acepta caracteres alfabéticos.
+                </mat-error>
+            </mat-hint>
+        </mat-form-field>
+        <mat-form-field class="product-input">
+            <mat-label>Código</mat-label>
+            <input matInput placeholder="Código" formControlName="code" maxlength="6" id="code"  />
+            <mat-hint *ngIf="form.controls['code']?.invalid && form.controls['code']?.touched">
+
+            </mat-hint>
+            <mat-error class="text-error" *ngIf="
+                  form.controls['code'].errors &&
+                  form.controls['code'].errors['required']
+                ">
+                Este campo es obligatorio.
+            </mat-error>
+            <mat-error class="text-error" *ngIf="
+                  form.controls['code'].errors &&
+                  form.controls['code'].errors['minlength']
+                ">
+                Debe tener mínimo 6 caracteres.
+            </mat-error>
+            <mat-error class="text-error" *ngIf="
+                  form.controls['code'].errors &&
+                  form.controls['code'].errors['pattern']
+                ">
+                Solo acepta caracteres alfabéticos.
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="product-input">
+            <mat-label>Precio</mat-label>
+            <input matInput type="number" formControlName="price" placeholder="Precio" name="price" />
+            <mat-hint *ngIf="
+                f['price']?.touched &&
+                f['price']?.invalid
+              ">
+
+            </mat-hint>
+            <mat-error class="text-error" *ngIf="
+                  f['price'].errors &&
+                  f['price'].errors['required']
+                ">
+                Este campo es obligatorio.
+            </mat-error>
+            <mat-error class="text-error" *ngIf="
+                  f['price'].errors &&
+                  f['price'].errors['min']
+                ">
+                El valor debe ser mayor a 0.
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Categoria</mat-label>
+            <mat-select>
+                @for (category of catgories; track category) {
+                <mat-option (onSelectionChange)="getCategory(category.value)"
+                    [value]="category.value">{{category.viewValue}}</mat-option>
+                }
+            </mat-select>
+            <mat-hint *ngIf="f['category']?.invalid && f['category']?.touched">
+
+            </mat-hint>
+            <mat-error class="text-error" *ngIf="
+                  f['category'].errors &&
+                  f['category'].errors['required']
+                ">
+                Este campo es obligatorio.
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput placeholder="Descripción" formControlName="description" id="description"></textarea>
+            <mat-hint *ngIf="f['description']?.invalid && f['description']?.touched">
+
+            </mat-hint>
+            <mat-error class="text-error" *ngIf="
+                  f['description'].errors &&
+                  f['description'].errors['required']
+                ">
+                Este campo es obligatorio.
+            </mat-error>
+            <mat-error class="text-error" *ngIf="
+                  f['description'].errors &&
+                  f['description'].errors['minlength']
+                ">
+                Debe tener mínimo 6 caracteres.
+            </mat-error>
+            <mat-error class="text-error" *ngIf="
+                  f['description'].errors &&
+                  f['description'].errors['pattern']
+                ">
+                Solo acepta caracteres alfabéticos.
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button class="btn-icon btn-icon-delete" mat-dialog-close>Cancelar</button>
+    <button mat-button class="btn-icon  btn-icon-primary " [disabled]="form.invalid" (click)="addProduct()"
+        cdkFocusInitial>Agregar</button>
+</mat-dialog-actions>
