@@ -35,7 +35,6 @@ export class EditProductComponent {
     },
     public dialogRef: MatDialogRef<EditProductComponent>
   ) {
-    console.log(data);
     
   }
 

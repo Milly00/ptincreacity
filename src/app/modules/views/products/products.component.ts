@@ -36,14 +36,12 @@ export class ProductsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== undefined) {
-        console.log(result);
         this.use.editProduct(result._id, result);
       }
     });
   }
 
   getProduct(product: Product) {
-    console.log(product);
     this.openDialog(product);
   }
 
@@ -68,7 +66,6 @@ export class ProductsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result !== undefined) {
-        console.log(result);
         this.use.deleteProduct(id);
       }
     });

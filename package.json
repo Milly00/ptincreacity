@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start-pwa": "ng build --prod --base-href=/ && http-server -p 8080 -c-1 dist/marketplace/browser"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +20,10 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "@angular/service-worker": "^19.2.0",
+    "dexie": "^4.0.11",
     "marketplace": "file:",
+    "pwa": "^1.9.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

@@ -77,12 +77,9 @@ export class AddProductComponent {
   }
 
   getCategory(ev: string) {
-    console.log(ev);
     this.f.category.setValue(ev);
   }
   addProduct() {
-    console.log(this.form);
-
     if (this.form.valid) {
       this.dialogRef.close();
       const { name, category, code, description, price } = this.form.value;

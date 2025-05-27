@@ -17,12 +17,10 @@ export class CardComponent {
   img: string = '../../../shared/images/product.png';
 
   sendProduct(product: Product) {
-    console.log(product);
     this.edit.emit(product);
   }
 
   deleteProduct(id?: string) {
-    console.log(id);
     this.delete.emit(id);
   }
 }
