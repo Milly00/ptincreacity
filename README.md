@@ -38,3 +38,8 @@ npm install dexie [https://dexie.org/docs/Tutorial/Angular]
 
 Biblioteca JavaScript que facilita la interacción con la API de IndexedDB en Angular
 
+## NOTA
+
+Antes de ejecutar el servidor, primero instalar los paquetes de node con (npm i)
+
+El funcionamiento de pwa solo se logra primero construyendo la app con (ng build --configuration=production) y ejecutando un server con ayuda de http-server (npx http-server -p 8081 -c-1 dist/marketplace/browser) si no esta instalado generara error
