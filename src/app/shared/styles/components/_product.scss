@@ -1,0 +1,29 @@
+@use "../../../shared/styles/variables";
+
+.edit-product-content {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .col {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+  }
+
+  .col-4 {
+    width: auto;
+    margin: auto;
+  }
+
+  .product-input {
+    margin: 0px 10px;
+    display: flex;
+  }
+}
+
+.full-width {
+  width: 100%;
+}

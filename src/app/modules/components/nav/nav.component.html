@@ -1,0 +1,18 @@
+<nav>
+    <div class="nav-container">
+
+        <button (click)="hiddenMenu()" class="nav-btn-collapse">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+        </button>
+        <a href="#" class="nav-main-text " [class]="{'d-none': displayMenu}">Mi Empresa</a>
+        <div class="nav-options-content " [class]="{'d-none': displayMenu}">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <button class="btn-primary btn">Logout</button>
+
+        </div>
+
+    </div>
+</nav>

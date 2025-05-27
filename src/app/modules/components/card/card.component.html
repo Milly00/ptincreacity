@@ -1,0 +1,27 @@
+<div class="card">
+
+    <div class="card-content">
+        <h3 class="card-title">{{product.name}}</h3>
+        <div class="card-details">
+            <p class="card-price">{{product.price | currency}}</p>
+            <p class="card-category">{{product.category}}</p>
+        </div>
+        <p class="card-description">{{product.description}}</p>
+        <hr>
+        <div class="card-options">
+            <button (click)="sendProduct(product)" class="btn-icon  btn-icon-primary ">
+                Editar
+                <span class="material-symbols-outlined">
+                    edit
+                </span>
+            </button>
+            <button (click)="deleteProduct(product._id)" class="btn-icon btn-icon-delete">
+                Eliminar
+                <span class="material-symbols-outlined">
+                    delete
+                </span>
+            </button>
+
+        </div>
+    </div>
+</div>

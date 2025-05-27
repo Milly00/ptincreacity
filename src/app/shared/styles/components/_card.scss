@@ -1,0 +1,43 @@
+@use "../../../shared/styles/variables";
+
+.card {
+  width: 270px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin:  10px 10px;
+  border-radius: 10px;
+}
+.card-title {
+  color: variables.$primary;
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.card-content {
+  hr {
+    background-color: rgba(128, 128, 128, 0.461);
+  }
+}
+.card-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.card-details {
+  display: flex;
+  justify-content: space-between;
+
+  .card-price {
+    color: variables.$green;
+  }
+
+  .card-category {
+    color: variables.$text-primary;
+    font-weight: 300;
+  }
+}
+.card-description {
+  color: variables.$text-primary;
+  font-size: 14px;
+  margin: 5px auto;
+}

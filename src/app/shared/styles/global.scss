@@ -1,0 +1,14 @@
+@use "variables";
+@use "components";
+@use "views";
+
+.content {
+  padding: 10px;
+}
+.main {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
